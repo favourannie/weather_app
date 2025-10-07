@@ -38,13 +38,9 @@ exports.weather = async(req,res)=>{
             return res.status(404).json({
                 message: "City not found"
             })
-        } else if (error.response && error.response.status === 401){
-            return res.status(401).json({
-                message: "Invalid API key"
-            })
         } else if (error.response && error.response.status === 400){
             return res.status(400).json({
-                message: "Bad Request"
+                message: "Bad Request: City name is required"
             })
         }
         res.status(500).json({
