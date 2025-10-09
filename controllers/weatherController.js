@@ -27,6 +27,7 @@ exports.weather = async(req,res)=>{
             wind_speed: response.data.wind.speed,
             condition: response.data.weather[0].description
         }
+        
         res.status(200).json({
             message: "Weather data fetched successfully",
             data: data
